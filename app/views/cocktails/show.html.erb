@@ -1,0 +1,7 @@
+<h1><%= @cocktail.name %></h1>
+
+<p><%= @cocktail.doses %></p>
+
+<p><%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail) %></p>
+
+<p><%= link_to "Go Back", cocktails_path %></p>
