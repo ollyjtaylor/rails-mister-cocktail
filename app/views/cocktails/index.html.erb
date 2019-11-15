@@ -14,7 +14,7 @@
     <div class="row">
       <% @cocktails.each do |cocktail|%>
         <div class="col-sm-4">
-          <div class="card hvr-grow p-5" style="background-image: url(<%= asset_url('cocktail.png') %>);  width: 18rem; margin: 0 auto; height: 212px; margin-bottom: 5px; margin-top: 20px; background-color: white; border-radius: 3px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);" >
+          <div class="card hvr-grow p-5" style="width: 18rem; margin: 0 auto; height: 212px; margin-bottom: 10px; margin-top: 20px; background-color: white; border-radius: 3px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);" >
             <div class="card-body">
               <h5 class="card-title"><%= cocktail.name %></h5>
               <a href="<%= cocktail_path(cocktail) %>" class="btn btn-light">View</a>
@@ -23,6 +23,9 @@
         </div>
       <% end %>
     </div>
+  </div>
+
+  <div class="footer">
   </div>
 </div>
 
