@@ -1,9 +1,39 @@
 <div class="maindiv">
 
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to "#", class: "navbar-brand" do %>
+    <%= image_tag asset_url('cocktail.png') %>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Home", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Messages", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item dropdown">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Action", "#", class: "dropdown-item" %>
+          <%= link_to "Another action", "#", class: "dropdown-item" %>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
   <div class="banner" style="background-image: url(<%= asset_url('cocktails.jpg') %>)">
     <div class="text">
       <h1>Cocktails</h1>
-        <p><%= link_to "Add a cocktail", new_cocktail_path, class: 'btn btn-light' %></p>
+        <p><%= link_to "Add a cocktail", new_cocktail_path, class: 'btn btn-outline-light' %></p>
     </div>
   </div>
   <div class="buffer" style="height: 40px;">
@@ -13,11 +43,11 @@
   <div class="cocktails">
     <div class="row">
       <% @cocktails.each do |cocktail|%>
-        <div class="col-sm-4">
-          <div class="card hvr-grow p-5" style="width: 18rem; margin: 0 auto; height: 212px; margin-bottom: 10px; margin-top: 20px; background-color: white; border-radius: 3px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);" >
+        <div class="col-sm-3">
+          <div class="card hvr-grow p-5" style="width: 18rem; margin: 0 auto; height: 212px; margin-bottom: 10px; margin-top: 20px; background-image: url(<%= asset_url('mojito.jpg') %>); background-size: cover; border-radius: 3px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);" >
             <div class="card-body">
-              <h5 class="card-title"><%= cocktail.name %></h5>
-              <a href="<%= cocktail_path(cocktail) %>" class="btn btn-light">View</a>
+              <h5 class="card-title" style="color: white;"><%= cocktail.name %></h5>
+              <a href="<%= cocktail_path(cocktail) %>" class="btn btn-outline-light">View</a>
             </div>
           </div>
         </div>
